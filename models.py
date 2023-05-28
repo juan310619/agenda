@@ -12,7 +12,7 @@ class User(Base):
     is_active = Column(Boolean, default=False)
 
     tareas = relationship("Tarea", back_populates="propietario")
-
+ 
 class Tarea(Base):
     __tablename__ = "recordatorios"
     id = Column(Integer, primary_key=True, index=True)
