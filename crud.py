@@ -1,7 +1,7 @@
 from sqlalchemy.orm import Session 
 from seguro import get_password_hash
 import models, schemas
-
+ 
 def get_user(db: Session, user_id: int):
     return db.query(models.User).filter(models.User.id == user_id).first()
 
@@ -45,4 +45,4 @@ def delete_tarea(db: Session, tarea_id: int):
     return tarea
 
 def get_tareas_by_user(db: Session, user_id: int, skip: int = 0, limit: int = 100):
-    return db.query(models.Tarea).filter(models.Tarea.propietario_id == user_id).offset(skip).limit(limit).all()
+    return db.query(models.Tarea).filter(models.Tarea.propietario_id == user_id).offset(skip).limit(limit).all() 

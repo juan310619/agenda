@@ -4,7 +4,7 @@ from sqlalchemy.orm import sessionmaker
  
 SQLALCHEMY_DATABASE_URL = "mysql+pymysql://root:test@localhost:3306/agenda"
 
-
+ 
 engine = create_engine(
     SQLALCHEMY_DATABASE_URL
 )

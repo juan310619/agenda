@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from typing import Union
+from typing import Union,List
 
 
 class TareasARealizar(BaseModel):
@@ -26,11 +26,11 @@ class UserBase(BaseModel):
 class UserCreate(UserBase):
     password: str
 
-
+ 
 class User(UserBase):
     id: int
     is_active: bool
-    items: list[Tareas] = []
+    items: List[Tareas] = []
 
     class Config:
         orm_mode = True
